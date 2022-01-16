@@ -1,0 +1,47 @@
+//this stylesheet is more understandable
+
+//@mixin means crate a template that we can reuse, like a function 
+@mixin sass-button($bg:$bgcolor, $color:#333) {
+    background-color: $bg;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    resize: both;
+    width: 350px;
+    height: 370px;
+    border: 10px solid black;
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E") 1;
+
+    label{
+        font-size: 32px;
+        color: $color;
+    }
+    p{
+        font-size: 17px;
+        color: $color;
+    }
+
+    img {
+        width: 200px;
+        height: 270px;
+    }
+
+    //hover for sass
+    //&:hover {
+    //    background-color: purple;
+    //}
+}
+
+.sass-button-spring {
+    //this class will have all of styled on the top that we did in here
+    //@include sass-button($bg:$bgcolor);
+    @include sass-button($bg:#F894D0, $color:#342A40);
+}
+
+.sass-button-autumn {
+    //it must be different variables
+    @include sass-button($bg:#E09D60, $color:#C0DCEC);
+}
